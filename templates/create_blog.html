@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <nav class="bg-blue-900 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-serif">Explore Ideas</h1>
+            <div class="space-x-6">
+                <a href="/" class="hover:text-blue-200">Home</a>
+                <a href="/blogs" class="hover:text-blue-200">Blogs</a>
+                <a href="/create" class="hover:text-blue-200">Create Blog</a>
+                <a href="/about" class="hover:text-blue-200">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto py-12 px-6">
+        <div class="bg-white p-8 rounded-lg shadow-lg max-w-4xl mx-auto">
+            <h1 class="text-3xl font-serif text-blue-900 mb-6 text-center">Create a New Blog</h1>
+            <form action="/create" method="post">
+                <div class="mb-4">
+                    <label for="username" class="block text-lg font-semibold text-gray-700">Username:</label>
+                    <input type="text" id="username" name="username" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="title" class="block text-lg font-semibold text-gray-700">Title:</label>
+                    <input type="text" id="title" name="title" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-6">
+                    <label for="content" class="block text-lg font-semibold text-gray-700">Content:</label>
+                    <textarea id="content" name="content" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows="6"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="bg-blue-800 text-white px-6 py-2 rounded-lg hover:bg-blue-900">Submit</button>
+                </div>
+            </form>
+            <div class="mt-6 text-center">
+                <a href="/blogs" class="text-blue-800 hover:text-blue-600">Back to Blogs</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-blue-900 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p class="text-sm">&copy; 2025 Explore Ideas. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
