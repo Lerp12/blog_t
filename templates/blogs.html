@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,9 @@
 
     <nav class="bg-blue-900 text-white p-4">
         <div class="container mx-auto flex justify-between items-center">
+            <a href="/">
             <h1 class="text-2xl font-serif">Explore Ideas</h1>
+            </a>
             <div class="space-x-6">
                 <a href="/" class="hover:text-blue-200">Home</a>
                 <a href="/blogs" class="hover:text-blue-200">Blogs</a>
@@ -28,7 +30,7 @@
                 <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
                     <h2 class="text-2xl font-serif text-blue-900 mb-2">{{ blog.title }}</h2>
                     <p class="text-gray-700 mb-4">By: <span class="font-semibold">{{ blog.username }}</span></p>
-                    <p class="text-gray-800 mb-6">{{ blog.content|truncatewords(30) }}</p>
+                    <p class="text-gray-800 mb-6">{{ blog.content }}</p>
                     <a href="#" class="inline-block bg-blue-800 text-white px-4 py-2 rounded-lg hover:bg-blue-900">Read More</a>
                 </div>
             {% endfor %}
@@ -39,12 +41,56 @@
         </div>
     </main>
 
-    <footer class="bg-blue-900 text-white py-6">
-        <div class="container mx-auto text-center">
-            <p class="text-sm">&copy; 2025 Explore Ideas. All rights reserved.</p>
-        </div>
-    </footer>
+    
 
 </body>
-</html>
+</html> -->
 
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <nav class="bg-blue-900 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/">
+                <h1 class="text-2xl font-serif">Explore Ideas</h1>
+            </a>
+            <div class="space-x-6">
+                <a href="/" class="hover:text-blue-200">Home</a>
+                <a href="/blogs" class="hover:text-blue-200">Blogs</a>
+                <a href="/create" class="hover:text-blue-200">Create Blog</a>
+                <a href="/about" class="hover:text-blue-200">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto py-12 px-6">
+        <h1 class="text-4xl font-serif text-blue-900 mb-8 text-center">All Blogs</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for blog in blogs %}
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+                    <h2 class="text-2xl font-serif text-blue-900 mb-2">{{ blog.title }}</h2>
+                    <p class="text-gray-700 mb-4">By: <span class="font-semibold">{{ blog.username }}</span></p>
+                    <p class="text-gray-800 mb-6">{{ blog.content[:100] }}...</p>
+                    <a href="/blog/{{ blog.id }}" class="inline-block bg-blue-800 text-white px-4 py-2 rounded-lg hover:bg-blue-900">Read More</a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="mt-8 text-center">
+            <a href="/create" class="bg-blue-800 text-white px-6 py-2 rounded-lg hover:bg-blue-900">Create a New Blog</a>
+        </div>
+    </main>
+</body>
+</html>

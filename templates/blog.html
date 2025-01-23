@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ blog.title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-blue-900 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/">
+                <h1 class="text-2xl font-serif">Explore Ideas</h1>
+            </a>
+            <div class="space-x-6">
+                <a href="/" class="hover:text-blue-200">Home</a>
+                <a href="/blogs" class="hover:text-blue-200">Blogs</a>
+                <a href="/create" class="hover:text-blue-200">Create Blog</a>
+                <a href="/about" class="hover:text-blue-200">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Content -->
+    <main class="container mx-auto py-12 px-6">
+        <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+            <h1 class="text-4xl font-serif text-blue-900 mb-4">{{ blog.title }}</h1>
+            <p class="text-gray-700 text-lg mb-6">
+                <strong>By:</strong> <span class="font-semibold">{{ blog.username }}</span>
+            </p>
+            <p class="text-gray-800 leading-relaxed text-lg">{{ blog.content }}</p>
+            <div class="mt-6">
+                <a href="/blogs" class="bg-blue-800 text-white px-6 py-2 rounded-lg hover:bg-blue-900">Back to Blogs</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    
+
+</body>
+</html>
+
